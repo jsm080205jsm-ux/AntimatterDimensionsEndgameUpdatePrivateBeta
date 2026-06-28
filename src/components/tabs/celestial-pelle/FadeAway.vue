@@ -3,12 +3,14 @@ export default {
   name: "FadeAway",
   data() {
     return {
-      opacity: 0
+      opacity: 0,
+      isDarker: false
     };
   },
   methods: {
     update() {
-      this.opacity = Alpha.isRunning ? (player.options.brightAlpha ? 0.2 : 0.5) : (GameEnd.endState - END_STATE_MARKERS.FADE_AWAY) / 2;
+      this.isDarker = Alpha.isRunning;
+      this.opacity = this.isDarker ? (player.options.brightAlpha ? 0.2 : 0.5) : (GameEnd.endState - END_STATE_MARKERS.FADE_AWAY) / 2;
     }
   }
 };
@@ -124,5 +126,12 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
   filter: brightness(0.5);
+}
+
+.t-s13 .c-background-overlay {
+  background: url("../../../../public/images/s13-bg.jpg");
+  background-position-x: 50%;
+  background-position-y: 50%;
+  background-size: 150%;
 }
 </style>
