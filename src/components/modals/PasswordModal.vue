@@ -23,7 +23,7 @@ export default {
   methods: {
     savePassword() {
       const correct = [
-        "060646bd56a29d5cbdad16195f6afbcb0367ce33dba3150e882b961d14885544",
+        "2ba960139801a364e147da8e2dd3044ed67b75cf28ab3fc675a17810e934e8ec",
       ];
       this.isCorrect = correct.indexOf(sha512_256(this.input.replace(/\s/gu, "").toUpperCase()));
       if (this.notEmpty) this.password = this.input;
